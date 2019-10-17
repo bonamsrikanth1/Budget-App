@@ -124,8 +124,7 @@ var budgetController = (function() {
         },
         
         calculatePercentages: function() {
-            
-            /*
+            /***
             a=20
             b=10
             c=40
@@ -133,7 +132,8 @@ var budgetController = (function() {
             a=20/100=20%
             b=10/100=10%
             c=40/100=40%
-            */
+            ***/
+            
             
             data.allItems.exp.forEach(function(cur) {
                cur.calcPercentage(data.totals.inc);
