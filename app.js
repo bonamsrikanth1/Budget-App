@@ -371,32 +371,7 @@ var controller = (function(budgetCtrl, UICtrl) {
         
         document.querySelector(DOM.inputType).addEventListener('change', UICtrl.changedType);        
     };
-    
-    
-    var updateBudget = function() {
-        
-        // 1. Calculate the budget
-        budgetCtrl.calculateBudget();
-        
-        // 2. Return the budget
-        var budget = budgetCtrl.getBudget();
-        
-        // 3. Display the budget on the UI
-        UICtrl.displayBudget(budget);
-    };
-    
-    
-    var updatePercentages = function() {
-        
-        // 1. Calculate percentages
-        budgetCtrl.calculatePercentages();
-        
-        // 2. Read percentages from the budget controller
-        var percentages = budgetCtrl.getPercentages();
-        
-        // 3. Update the UI with the new percentages
-        UICtrl.displayPercentages(percentages);
-    };
+	
     
     
     var ctrlAddItem = function() {
@@ -449,6 +424,35 @@ var controller = (function(budgetCtrl, UICtrl) {
             updatePercentages();
         }
     };
+	//Updating the percentages
+	var updatePercentages = function() {
+        
+        // 1. Calculate percentages
+        budgetCtrl.calculatePercentages();
+        
+        // 2. Read percentages from the budget controller
+        var percentages = budgetCtrl.getPercentages();
+        
+        // 3. Update the UI with the new percentages
+        UICtrl.displayPercentages(percentages);
+    };
+    
+    //updating the budget  and displaying it on UI
+	
+    var updateBudget = function() {
+        
+        // 1. Calculate the budget
+        budgetCtrl.calculateBudget();
+        
+        // 2. Return the budget
+        var budget = budgetCtrl.getBudget();
+        
+        // 3. Display the budget on the UI
+        UICtrl.displayBudget(budget);
+    };
+    
+    
+
     
     
     return {
